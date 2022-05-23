@@ -1,0 +1,22 @@
+.form_control{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 31px;
+}
+.form_control.error input,
+.form_control.error.error textarea{
+    border: solid red 2px;
+}
+
+.form_control.error span{
+    color: red;
+}
+.SummaryError{
+    color: rgb(252, 73, 73);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+}

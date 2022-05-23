@@ -1,0 +1,24 @@
+.whoareyou {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 70px 0 284px;
+
+  &__header{
+    margin: 0 0 130px;
+    font-family: 'Raleway';
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 23px;
+  }
+
+  &__auth{
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    text-decoration-line: underline;
+    color: #4D89FF;
+  }
+
+}
