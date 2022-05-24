@@ -1,4 +1,5 @@
 import React from 'react'
+import Help from './blocks/Help/Help'
 import Menu from './blocks/Menu/Menu'
 
 // STYLES
@@ -8,6 +9,7 @@ const Main = () => {
   return (
     <>
       <Menu />
+      <Help />
     </>
   )
 }
