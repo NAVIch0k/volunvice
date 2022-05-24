@@ -1,0 +1,74 @@
+.menu {
+  display: flex;
+  align-items: center;
+
+  max-width: 1720px;
+  width: 100%;
+
+  margin: 40px auto 0;
+
+  &__logo {
+    margin: 0;
+    margin-right: auto;
+
+    font-family: 'Raleway';
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 23px;
+
+    color: #000000;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+
+    gap: 0 50px;
+  }
+
+  &__link {
+    display: flex;
+
+    text-decoration: none;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #000000;
+
+    &_underline {
+      text-decoration: underline;
+    }
+
+    &_arrow {
+      display: flex;
+      align-items: center;
+
+      &:after {
+        content: '';
+
+        position: relative;
+        left: 10px;
+
+        width: 9px;
+        height: 14px;
+
+        background: url('../../../../../assets/svg/choose-arrow.svg') no-repeat;
+      }
+    }
+  }
+
+  &__help {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 218px;
+    height: 49px;
+
+    background: #4d89ff;
+    border-radius: 6px;
+
+    color: #ffffff;
+  }
+}
