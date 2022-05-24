@@ -1,0 +1,64 @@
+.volunteers {
+  max-width: 1720px;
+  width: 100%;
+
+  margin: 200px auto 0;
+
+  &__title {
+    margin: 0;
+    margin-bottom: 60px;
+
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 56px;
+
+    color: #000000;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__volunteer {
+    display: flex;
+
+    max-width: 527px;
+    width: 100%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__image {
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+
+  &__name {
+    margin: 0;
+    margin-bottom: 20px;
+
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+
+    color: #000000;
+  }
+
+  &__about {
+    margin: 0;
+
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #454545;
+  }
+}
