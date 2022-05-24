@@ -1,10 +1,10 @@
-.whoareyou {
+.auth {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 70px 0;
+  margin-top: 70px;
 
-  &__header{
+  &__header {
     margin: 0 0 130px;
     font-family: 'Raleway';
     font-weight: 600;
@@ -12,13 +12,11 @@
     line-height: 23px;
   }
 
-  &__auth{
+  &__reg{
     font-family: 'Raleway';
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
-    text-decoration-line: underline;
     color: #4D89FF;
   }
-
 }

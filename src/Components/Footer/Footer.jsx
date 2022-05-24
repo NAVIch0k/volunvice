@@ -8,17 +8,15 @@ const Footer = () => {
             <div className={s.footer_wrapper}>
                 <div className={s.footer__link}>
                     <NavLink to={'/main'}>Главная</NavLink>
-                    <NavLink to={'/main#popularplace'}>Популярные места</NavLink>
-                    <NavLink to={'#'}>Показать место</NavLink>
-                    <NavLink to={'#'}>Избранное</NavLink>
-                    <NavLink to={'#'}>Евгений</NavLink>
+                    <NavLink to={'/main#popularplace'}>Страница</NavLink>
+                    <NavLink to={'#'}>Страница</NavLink>
+                    <NavLink to={'#'}>Страница</NavLink>
+                    <NavLink to={'#'}>Войти</NavLink>
                 </div>
                 <div className={s.footer__info}>
-                    <p>loctravel@lctrvl.com</p>
+                    <p>volunvice@email.com</p>
+                    <p>Volunvice © 2022</p>
                     <p>+7 988 386-23-87</p>
-                </div>
-                <div className={s.footer__name}>
-                    <p>Loctravel © 2022</p>
                 </div>
             </div>
         </div>

@@ -1,8 +1,8 @@
 .footer{
-  margin-top: 70px;
   display: flex;
   justify-content: center;
   width: 100%;
+  margin: auto 0 48px;
 
   &_wrapper{
     margin-bottom: 48px;
@@ -31,7 +31,7 @@
   &__info{
     margin: 48px 0;
     display: flex;
-    max-width: 394px;
+    max-width: 620px;
     width: 100%;
     justify-content: space-between;
     p{

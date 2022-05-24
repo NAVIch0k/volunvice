@@ -1,11 +1,11 @@
-.form{
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 378px;
   width: 100%;
 
-  &__header{
+  &__header {
     margin: 0 0 49px;
     font-family: 'Raleway';
     font-weight: 400;
@@ -13,7 +13,8 @@
     line-height: 28px;
   }
 
-  &__label{
+  &__label {
+    cursor: pointer;
     display: flex;
     align-items: center;
     width: 100%;
@@ -25,14 +26,82 @@
     font-size: 18px;
     line-height: 21px;
 
-    &:first-of-type{
+    &:first-of-type {
       margin-bottom: 28px;
     }
   }
 
-  input{
+  input {
     opacity: 0;
     position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     z-index: -1;
-  };
+  }
+
+
+  /* .design */
+  .design {
+    width: 22px;
+    height: 22px;
+
+    border: 2px solid #4D89FF;
+    border-radius: 100%;
+    margin: 0 20px;
+
+    position: relative;
+  }
+
+  .design::before,
+  .design::after {
+    content: "";
+    display: block;
+
+    width: inherit;
+    height: inherit;
+
+    border-radius: inherit;
+
+    position: absolute;
+    transform: scale(0);
+    transform-origin: center center;
+  }
+
+  .design:before {
+    opacity: 0;
+    transition: .3s;
+  }
+
+  .design::after {
+    background: #4D89FF;
+    opacity: .4;
+    transition: .6s;
+  }
+
+  input:checked+.design::before {
+    opacity: 1;
+    transform: scale(.6);
+  }
+
+  input:focus+.design:before {
+    background: #4D89FF;
+  }
+
+  button{
+    margin: 49px 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95px;
+    height: 45px;
+    border: none;
+    background: #4D89FF;
+    border-radius: 10px;
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+  }
 }
