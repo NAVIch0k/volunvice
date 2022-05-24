@@ -1,9 +1,17 @@
-import React from "react";
+import React, {useEffect} from "react";
 import s from './WhoAreYou.module.scss'
 import WhoAreYouForm from "./WhoAreYouForm";
 import {NavLink} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {GetAllTypesAccount} from "../../store/TypeAccount";
 
 const WhoAreYou = () => {
+
+    let dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(GetAllTypesAccount())
+    },[])
 
     let who = (data) => {
         if (!data) {

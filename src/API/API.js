@@ -19,3 +19,9 @@ export const AuthApi = {
         return instance.get('accounts')
     }
 }
+
+export const TypesAccountApi = {
+    GetTypes(){
+        return instance.get('/accounts/types')
+    }
+}

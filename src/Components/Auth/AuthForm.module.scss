@@ -22,6 +22,8 @@
     border: none;
     border-bottom: 1px solid #000000;
     outline: none;
+    background: transparent;
+    font-feature-settings: 'pnum' on, 'lnum' on;
 
     font-family: 'Raleway';
     font-weight: 400;
@@ -56,5 +58,11 @@
     font-size: 18px;
     line-height: 21px;
     color: #FFFFFF;
+  }
+
+  &__error{
+    color: red;
+    font-size: 20px;
+    margin: 5px;
   }
 }

@@ -7,9 +7,9 @@ const Form=(props)=>{
         <form className={s.form} onSubmit={props.handleSubmit}>
             <h2>Войти</h2>
             <Field name={'email'} type={'email'} component={'input'} placeholder={'Электронная почта'}/>
-            <Field name={'password'} type={'password'} component={'input'} placeholder={'Пароль'}/>
+            <Field name={'password'} type={'password'} component={'input'} placeholder={'Пароль'} minLength={5}/>
             <button type={'submit'}>Далее</button>
-            {props.error?<div>{props.error}</div>:<></>}
+            {props.error?<div className={s.form__error}>{props.error}</div>:<></>}
         </form>
     )
 }
