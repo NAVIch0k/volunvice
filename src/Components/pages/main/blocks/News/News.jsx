@@ -1,5 +1,8 @@
 import React from 'react'
 
+// UI
+import ButtonControls from '../../../../UI/ButtonControls/ButtonControls'
+
 // SLIDER
 import Slider from 'react-slick'
 
@@ -59,10 +62,7 @@ const News = () => {
           </div>
         </div>
       </Slider>
-      <div className={style.news__controls}>
-        <button className={[style.news__button, style.news__button_left].join(' ')} onClick={() => slider.slickPrev()}></button>
-        <button className={[style.news__button, style.news__button_right].join(' ')} onClick={() => slider.slickNext()}></button>
-      </div>
+      <ButtonControls slider={slider} />
     </section>
   )
 }
