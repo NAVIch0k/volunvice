@@ -17,7 +17,7 @@ const Auth=()=>{
         <div className={s.auth}>
             <h2 className={s.auth__header}>Volunvice</h2>
             <AuthForm onSubmit={Auth}/>
-            <NavLink className={s.auth__reg} to={'/'}>Зарегистрироваться</NavLink>
+            <NavLink className={s.auth__reg} to={'/registration'}>Зарегистрироваться</NavLink>
         </div>
     )
 }

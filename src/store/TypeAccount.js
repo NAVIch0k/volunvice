@@ -24,7 +24,7 @@ const SetTypesAC=(data)=>({type:SetTypesAccount,data})
 export const GetAllTypesAccount=()=>async(dispatch)=>{
     try {
         let res = await TypesAccountApi.GetTypes()
-        dispatch(SetTypesAC(res))
+        dispatch(SetTypesAC(res.data.types))
     }
     catch (e){
         console.log(e)

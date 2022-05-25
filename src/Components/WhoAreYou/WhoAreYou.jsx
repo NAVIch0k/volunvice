@@ -1,13 +1,14 @@
 import React, {useEffect} from "react";
 import s from './WhoAreYou.module.scss'
 import WhoAreYouForm from "./WhoAreYouForm";
-import {NavLink} from "react-router-dom";
+import {NavLink, useHistory} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {GetAllTypesAccount} from "../../store/TypeAccount";
 
 const WhoAreYou = () => {
 
     let dispatch = useDispatch()
+    let history =useHistory()
 
     useEffect(() => {
         dispatch(GetAllTypesAccount())
@@ -17,7 +18,12 @@ const WhoAreYou = () => {
         if (!data) {
             alert('выберите параметр')
         } else {
-            console.log(data)
+            if (data=='User'){
+                history.replace('/registration/needy')
+            }
+            else{
+                history.replace('/registration/volunteer')
+            }
         }
     }
 

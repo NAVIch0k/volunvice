@@ -27,8 +27,8 @@ export const RegistrationSend = (data) => async (dispatch) => {
     try {
         let response = await AuthApi.Registration(data)
         dispatch(SetUserDataAC(response))
-    } catch (e) {
-        console.log(e)
+    } catch (Response) {
+        dispatch(stopSubmit('registration', { _error: Response.response.data.message }))
     }
 }
 
