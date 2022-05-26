@@ -1,4 +1,7 @@
 .good {
+  display: flex;
+  justify-content: space-between;
+
   max-width: 1720px;
   width: 100%;
 
@@ -54,5 +57,37 @@
     text-decoration: none;
 
     color: #ffffff;
+  }
+
+  &__slider {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 850px;
+    width: 100%;
+  }
+
+  &__controls {
+    align-self: flex-end;
+  }
+
+  &__dots {
+    display: flex;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  &__dot {
+    width: 18.1px;
+    height: 3px;
+
+    border: 1px solid #4d89ff;
+    border-radius: 3px;
+
+    &:hover {
+      background-color: #4d89ff;
+    }
   }
 }

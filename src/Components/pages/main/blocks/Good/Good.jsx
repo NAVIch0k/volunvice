@@ -1,9 +1,34 @@
 import React from 'react'
 
+// UI
+import ButtonControls from '../../../../UI/ButtonControls/ButtonControls'
+
+// SLIDER
+import Slider from 'react-slick'
+
+// IMAGES
+import picture from '../../../../../assets/images/good-slide.png'
+
 // STYLES
 import style from './good.module.scss'
 
 const Good = () => {
+  const [slider, setSlider] = React.useState('')
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    appendDots: (dots) => (
+      <div className={style.good__dots}>
+        <ul className={style.good__dots}> {dots} </ul>
+      </div>
+    ),
+    customPaging: (i) => <div className={style.good__dot}></div>,
+  }
+
   return (
     <section className={style.good}>
       <div className={style.good__good}>
@@ -16,7 +41,17 @@ const Good = () => {
           Хочу помочь!
         </a>
       </div>
-      <div className={style.good__slider}></div>
+      <div className={style.good__slider}>
+        <Slider {...settings} ref={(c) => setSlider(c)}>
+          <img src={picture} alt="Новости" />
+          <img src={picture} alt="Новости" />
+          <img src={picture} alt="Новости" />
+          <img src={picture} alt="Новости" />
+          <img src={picture} alt="Новости" />
+          <img src={picture} alt="Новости" />
+        </Slider>
+        <ButtonControls slider={slider} className={style.good__controls} />
+      </div>
     </section>
   )
 }
