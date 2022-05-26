@@ -3,6 +3,7 @@ import React from 'react'
 // COMPONENTS
 import Menu from '../../Menu/Menu'
 import Dashboard from './blocks/Dashboard/Dashboard'
+import Events from './blocks/Events/Events'
 import Info from './blocks/Info/Info'
 
 // STYLES
@@ -18,6 +19,7 @@ const Profile = () => {
 
         <div className={style.content}>
           <Dashboard />
+          <Events />
         </div>
       </div>
     </div>
