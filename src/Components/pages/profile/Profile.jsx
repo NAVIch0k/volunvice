@@ -2,6 +2,7 @@ import React from 'react'
 
 // COMPONENTS
 import Menu from '../../Menu/Menu'
+import Dashboard from './blocks/Dashboard/Dashboard'
 import Info from './blocks/Info/Info'
 
 // STYLES
@@ -15,7 +16,9 @@ const Profile = () => {
       <div className={style.columns}>
         <Info />
 
-        <div></div>
+        <div className={style.content}>
+          <Dashboard />
+        </div>
       </div>
     </div>
   )

@@ -6,5 +6,11 @@
 }
 
 .columns {
+  display: flex;
+
   margin-top: 105px;
+}
+
+.content {
+  width: 100%;
 }
