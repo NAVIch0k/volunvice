@@ -1,0 +1,44 @@
+.about {
+  display: flex;
+  max-width: 1720px;
+  width: 100%;
+
+  margin: 200px auto 0;
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 787px;
+
+    margin-right: 80px;
+  }
+
+  &__info {
+    margin: 0;
+    margin-bottom: 124px;
+
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
+
+    color: #000000;
+  }
+
+  &__offer {
+    align-self: flex-end;
+
+    max-width: 560px;
+    width: 100%;
+
+    margin: 0;
+
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+
+    color: #000000;
+  }
+}
