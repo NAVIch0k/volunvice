@@ -9,28 +9,34 @@ import Main from "./Components/pages/main/Main";
 import Events from './Components/pages/events/Events'
 import Profile from "./Components/pages/profile/Profile";
 import {useEffect} from "react";
+import {initialize_app} from "./store/AppInitialized";
+import {useSelector} from "react-redux";
 import {useDispatch} from "react-redux";
-import {AuthMe} from "./store/User";
 
 function App() {
-    let dispatch=useDispatch()
 
-    useEffect(()=>{
-        dispatch(AuthMe())
-    },[])
+    const dispatch=useDispatch()
+    const initialized = useSelector(state => state.app.initialized)
 
-    return (
-        <div className="App">
-            <Route exact path={'/registration'} render={() => <WhoAreYou/>}/>
-            <Route path={'/auth'} render={() => <Auth/>}/>
-            <Route path={'/main'} render={() => <Main/>}/>
-            <Route path={'/profile'} render={() => <Profile/>}/>
-            <Route path={'/events'} render={() => <Events />} />
-            <Route path={'/registration/volunteer'} render={() => <Registration_volunteer/>}/>
-            <Route path={'/registration/needy'} render={() => <Registration_needy/>}/>
-            <Route path={'/'} render={() =><Footer/>}/>
-        </div>
-    );
+    useEffect(() => {
+        dispatch(initialize_app())
+    }, [])
+
+    if (initialized) {
+        return (
+            <div className="App">
+                <Route exact path={'/registration'} render={() => <WhoAreYou/>}/>
+                <Route path={'/auth'} render={() => <Auth/>}/>
+                <Route path={'/profile'} render={() => <Profile/>}/>
+                <Route path={'/events'} render={() => <Events/>}/>
+                <Route path={'/registration/volunteer'} render={() => <Registration_volunteer/>}/>
+                <Route path={'/registration/needy'} render={() => <Registration_needy/>}/>
+                <Route exact path={'/'} render={() => <Main/>}/>
+                <Footer/>
+            </div>
+        );
+    }
+
 }
 
 export default App

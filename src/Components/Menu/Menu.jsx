@@ -23,7 +23,7 @@ const Menu = () => {
         <a className={[style.menu__link, style.menu__help].join(' ')} href="/">
           Хочу помочь!
         </a>
-        <a className={[style.menu__link, style.menu__link_underline].join(' ')} href="/">
+        <a className={[style.menu__link, style.menu__link_underline].join(' ')} href="/auth">
           Войти
         </a>
       </nav>

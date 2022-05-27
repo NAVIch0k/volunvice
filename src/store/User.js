@@ -19,8 +19,11 @@ const userReducer = (state = initialState, action) => {
         case REGISTRATION: {
             return {...state, ...action.data.data[0]}
         }
+        case DELETE: {
+            return {...state,...JSON.parse(JSON.stringify(initialState))}
+        }
         default: {
-            return state
+            return {...state}
         }
     }
 }

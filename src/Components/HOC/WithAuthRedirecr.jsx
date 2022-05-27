@@ -6,10 +6,16 @@ export const WithAuthRedirect = (Component) => {
     const RedirectComponent = () => {
         const history = useHistory()
         const userID = useSelector(state => state.user.account_id)
-        console.log(userID)
         if (userID) {
-            return <Component/>
+            if (history.location.pathname === '/auth') {
+                history.replace('/')
+            } else {
+                return <Component/>
+            }
         } else {
+            if (history.location.pathname === '/auth') {
+                return <Component/>
+            }
             history.replace('/auth')
         }
     }
