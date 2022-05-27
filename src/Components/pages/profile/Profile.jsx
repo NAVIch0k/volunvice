@@ -1,4 +1,6 @@
 import React from 'react'
+import {WithAuthRedirect} from "../../HOC/WithAuthRedirecr";
+import {compose} from "redux";
 
 // COMPONENTS
 import Menu from '../../Menu/Menu'
@@ -26,4 +28,4 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default compose(WithAuthRedirect)(Profile)

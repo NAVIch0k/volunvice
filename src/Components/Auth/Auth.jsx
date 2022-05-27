@@ -4,16 +4,18 @@ import AuthForm from "./AuthForm";
 import {NavLink} from "react-router-dom";
 import {LoginSend} from "../../store/User";
 import {useDispatch} from "react-redux";
+import {compose} from "redux";
+import {WithAuthRedirect} from "../HOC/WithAuthRedirecr";
 
-const Auth=()=>{
+const Auth = () => {
 
-    const dispatch=useDispatch()
+    const dispatch = useDispatch()
 
-    let Auth=(data)=>{
+    let Auth = (data) => {
         dispatch(LoginSend(data))
     }
 
-    return(
+    return (
         <div className={s.auth}>
             <h2 className={s.auth__header}>Volunvice</h2>
             <AuthForm onSubmit={Auth}/>
@@ -22,4 +24,4 @@ const Auth=()=>{
     )
 }
 
-export default Auth
+export default compose(WithAuthRedirect)(Auth)
