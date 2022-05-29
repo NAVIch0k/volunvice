@@ -11,7 +11,7 @@ const Menu = () => {
         <a className={style.menu__link} href="/">
           Главная
         </a>
-        <a className={style.menu__link} href="/">
+        <a className={style.menu__link} href="/events">
           Актуальные мероприятия
         </a>
         <a className={style.menu__link} href="/">
