@@ -5,12 +5,14 @@ import {composeWithDevTools} from "redux-devtools-extension";
 import userReducer from "./User";
 import typeAccReducer from "./TypeAccount";
 import AppReducer from "./AppInitialized";
+import Levels from './Levels';
 
 let reducer = combineReducers({
     form: formReducer,
     user: userReducer,
     typesAccount: typeAccReducer,
-    app:AppReducer
+    app:AppReducer,
+    lvls:Levels
 })
 
 let store = createStore(reducer, composeWithDevTools(applyMiddleware(thunkMiddleware)))
