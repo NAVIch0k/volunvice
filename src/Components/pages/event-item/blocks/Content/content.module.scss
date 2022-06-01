@@ -1,0 +1,39 @@
+.content {
+  margin-top: 40px;
+
+  &__column {
+    display: flex;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    max-width: 580px;
+    margin-top: 40px;
+  }
+
+  &__title {
+    margin: 0;
+
+    font-family: 'Raleway';
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #000000;
+  }
+
+  &__text {
+    display: flex;
+
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #000000;
+  }
+}
