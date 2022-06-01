@@ -1,5 +1,5 @@
-import {AuthApi} from "../API/API";
-import {stopSubmit} from "redux-form";
+import { AuthApi } from "../API/API";
+import { stopSubmit } from "redux-form";
 
 const REGISTRATION = 'REGISTRATION USER'
 const DELETE = 'DELETE USER'
@@ -11,32 +11,37 @@ let initialState = {
     email: '',
     type_id: null,
     date_reg: "",
-    photo_name: null
+    photo_name: null,
+    involved: null,
+    gratitude: null
 }
+
+
+
 
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
         case REGISTRATION: {
-            return {...state, ...action.data.data[0]}
+            return { ...state, ...action.data.data[0] }
         }
         case DELETE: {
-            return {...state,...JSON.parse(JSON.stringify(initialState))}
+            return { ...state, ...JSON.parse(JSON.stringify(initialState)) }
         }
         default: {
-            return {...state}
+            return { ...state }
         }
     }
 }
 
-const SetUserDataAC = (data) => ({type: REGISTRATION, data})
-const DeleteUserDataAC = () => ({type: DELETE})
+const SetUserDataAC = (data) => ({ type: REGISTRATION, data })
+const DeleteUserDataAC = () => ({ type: DELETE })
 
 export const RegistrationSend = (data) => async (dispatch) => {
     try {
         let response = await AuthApi.Registration(data)
         dispatch(SetUserDataAC(response))
     } catch (Response) {
-        dispatch(stopSubmit('registration', {_error: Response.response.data.message}))
+        dispatch(stopSubmit('registration', { _error: Response.response.data.message }))
     }
 }
 
@@ -45,7 +50,7 @@ export const LoginSend = (data) => async (dispatch) => {
         await AuthApi.Login(data)
         dispatch(SetUserDataAC(await AuthApi.CheckMe()))
     } catch (Response) {
-        dispatch(stopSubmit('auth', {_error: Response.response.data.message}))
+        dispatch(stopSubmit('auth', { _error: Response.response.data.message }))
     }
 }
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {DeleteSend} from "../../../../../store/User";
 
 // STYLE
@@ -10,12 +10,13 @@ import avatar from '../../../../../assets/images/avatar.png'
 
 const Info = () => {
 
-    const dispatch=useDispatch()
+  const {f_name,l_name}=useSelector(state=>state.user)
+  const dispatch=useDispatch()
 
   return (
     <section className={style.info}>
       <img className={style.info__avatar} src={avatar} alt="Аватар" />
-      <p className={style.info__name}>Максим Петров</p>
+      <p className={style.info__name}>{f_name} {l_name}</p>
       <p className={style.info__status}>Волонтер</p>
       <button className={[style.info__button, style.info__button_edit].join(' ')}>Редактировать</button>
       <button className={[style.info__button, style.info__button_logout].join(' ')} onClick={()=>dispatch(DeleteSend())}>Выйти</button>
