@@ -33,6 +33,16 @@ const Dashboard = () => {
     }
   }
 
+  React.useEffect(() => {
+    let dashboardProgress=document.getElementById('dashboardProgress')
+    let dashboardProgressPoint=document.getElementById('dashboardProgressPoint')
+    let positionPoint=dashboardProgress.clientWidth/nextLvl*prewLvl
+    dashboardProgressPoint.style.left=positionPoint+'px'
+  }, [involved])
+  
+
+
+
   return (
     <section className={style.dashboard}>
       <div className={style.dashboard__achievements}>
@@ -52,8 +62,8 @@ const Dashboard = () => {
       <div className={style.dashboard__level}>
         <p className={style.dashboard__title}>Волонтер {actualLvl} уровня (название)</p>
         <p className={style.dashboard__subtitle}>Чаще всего участвовал в сфере развития города</p>
-        <div className={style.dashboard__progress}>
-          <i className={style.dashboard__state}></i>
+        <div className={style.dashboard__progress} id={'dashboardProgress'}>
+          <i className={style.dashboard__state} id={'dashboardProgressPoint'}></i>
         </div>
         <div className={style.dashboard__info}>
           <p className={style.dashboard__text}>{prewLvl} мероприятий</p>
