@@ -5,14 +5,14 @@ const REGISTRATION = 'REGISTRATION USER'
 const DELETE = 'DELETE USER'
 
 let initialState = {
-    account_id: 1,
+    account_id: null,
     f_name: '',
     l_name: '',
     email: '',
     type_id: null,
     date_reg: "",
     photo_name: null,
-    involved: 40,
+    involved: null,
     gratitude: null
 }
 
