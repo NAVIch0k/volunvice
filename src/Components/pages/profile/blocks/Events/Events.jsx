@@ -1,23 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
+import EventsEl from './EventsEl'
 
 // STYLES
 import style from './events.module.scss'
+import { useSelector } from 'react-redux'
 
-// IMAGES
-import event1 from '../../../../../assets/images/event-1.png'
-import event2 from '../../../../../assets/images/event-2.png'
+const Events = (props) => {
 
-const Events = () => {
+  const { events } = useSelector(state => state.AccountEvents) 
+  let [isArhive,SetIsArhive]=useState('')
+  const SwapEvents=(arhive=false)=>{
+    if (arhive!=isArhive) {
+      props.GetAccountEvents(arhive)
+      SetIsArhive(arhive)
+    }
+  }
+
   return (
     <section className={style.events}>
       <h2 className={style.events__title}>Мероприятия</h2>
       <div className={style.events__search}>
-        <a className={[style.events__link, style.events__link_active].join(' ')} href="/">
+        <p className={!isArhive?style.events__link+' '+style.events__link_active:style.events__link} href="/" onClick={()=>SwapEvents(false)}>
           Актуальные
-        </a>
-        <a className={style.events__link} href="/">
+        </p>
+        <p className={isArhive?style.events__link+' '+style.events__link_active:style.events__link} href="/" onClick={()=>SwapEvents(true)}>
           Архив
-        </a>
+        </p>
         <div className={style.events__sort}>
           <p className={style.events__text}>По дате</p>
           <div className={style.events__date}>
@@ -27,21 +35,9 @@ const Events = () => {
         </div>
       </div>
       <div className={style.events__events}>
-        <div className={style.events__block}>
-          <img className={style.events__image} src={event1} alt="Мероприятие" />
-          <p className={style.events__start}>25 мая</p>
-          <p className={style.events__about}>Конференция “Познай себя и мир вокруг”</p>
-        </div>
-        <div className={style.events__block}>
-          <img className={style.events__image} src={event2} alt="Мероприятие" />
-          <p className={style.events__start}>26 мая</p>
-          <p className={style.events__about}>Форум “Жизнь морских черепашек”</p>
-        </div>
-        <div className={style.events__block}>
-          <img className={style.events__image} src={event1} alt="Мероприятие" />
-          <p className={style.events__start}>25 мая</p>
-          <p className={style.events__about}>Конференция “Познай себя и мир вокруг”</p>
-        </div>
+        {
+          events.map(e => <EventsEl img={e.image_path} date={e.date_start} name={e.name} />)
+        }
       </div>
     </section>
   )

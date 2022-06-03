@@ -3,16 +3,10 @@ import s from './WhoAreYou.module.scss'
 import WhoAreYouForm from "./WhoAreYouForm";
 import {NavLink, useHistory} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {GetAllTypesAccount} from "../../store/TypeAccount";
 
 const WhoAreYou = () => {
 
-    let dispatch = useDispatch()
     let history =useHistory()
-
-    useEffect(() => {
-        dispatch(GetAllTypesAccount())
-    },[])
 
     let who = (data) => {
         if (!data) {

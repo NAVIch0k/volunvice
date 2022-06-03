@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import s from './Footer.module.scss'
 
 const Footer = () => {
@@ -6,11 +7,11 @@ const Footer = () => {
         <div className={s.footer}>
             <div className={s.footer_wrapper}>
                 <div className={s.footer__link}>
-                    <a href={'/'}>Главная</a>
-                    <a href={'/'}>Страница</a>
-                    <a href={'/'}>Страница</a>
-                    <a href={'/'}>Страница</a>
-                    <a href={'/auth'}>Войти</a>
+                    <NavLink to={'/'}>Главная</NavLink>
+                    <NavLink to={'/profile'}>Профиль</NavLink>
+                    <NavLink to={'/'}>Страница</NavLink>
+                    <NavLink to={'/'}>Страница</NavLink>
+                    <NavLink to={'/'}>Войти</NavLink>
                 </div>
                 <div className={s.footer__info}>
                     <p>volunvice@email.com</p>

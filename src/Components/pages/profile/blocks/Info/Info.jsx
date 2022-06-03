@@ -10,14 +10,17 @@ import avatar from '../../../../../assets/images/avatar.png'
 
 const Info = () => {
 
-  const {f_name,l_name}=useSelector(state=>state.user)
+  const {f_name,l_name,type_id,photo_name}=useSelector(state=>state.user)
+  const {types}=useSelector(state=>state.typesAccount)
+  let typeName=types.filter(i=>type_id==i.type_id)[0].name
+
   const dispatch=useDispatch()
 
   return (
     <section className={style.info}>
-      <img className={style.info__avatar} src={avatar} alt="Аватар" />
+      <img className={style.info__avatar} src={photo_name?'http://188.225.83.101/api/static/accounts/img/'+photo_name:avatar} alt="Аватар" />
       <p className={style.info__name}>{f_name} {l_name}</p>
-      <p className={style.info__status}>Волонтер</p>
+      <p className={style.info__status}>{typeName}</p>
       <button className={[style.info__button, style.info__button_edit].join(' ')}>Редактировать</button>
       <button className={[style.info__button, style.info__button_logout].join(' ')} onClick={()=>dispatch(DeleteSend())}>Выйти</button>
     </section>

@@ -1,17 +1,17 @@
 import {TypesAccountApi} from '../API/API'
 const SetTypesAccount='SetTypesAccount'
 
-let initialState=[
-    {
+let initialState={
+    types:[{
         type_id: null,
         name: ''
-    }
-]
+    }]
+}
 
 const typeAccReducer=(state=initialState,action)=>{
     switch (action.type){
         case SetTypesAccount:{
-            return {...state,...action.data}
+            return {...state,types:action.data}
         }
         default:{
             return state

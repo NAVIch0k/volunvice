@@ -12,6 +12,7 @@ import {useEffect} from "react";
 import {initialize_app} from "./store/AppInitialized";
 import {useSelector} from "react-redux";
 import {useDispatch} from "react-redux";
+import { GetAllTypesAccount } from './store/TypeAccount';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
 
     useEffect(() => {
         dispatch(initialize_app())
+        dispatch(GetAllTypesAccount())
     }, [])
 
     if (initialized) {
