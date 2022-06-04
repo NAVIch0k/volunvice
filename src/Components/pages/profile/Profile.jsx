@@ -17,8 +17,8 @@ const Profile = () => {
 
   let dispatch = useDispatch()
   let init=useSelector(state=>state.AccountEvents.total_count)
-  const GetAccountEvents=(arhive=false)=>{
-    dispatch(GetAcoountEvents(arhive))
+  const GetAccountEvents=(arhive=false,direction='up')=>{
+    dispatch(GetAcoountEvents(arhive,direction))
   }
 
   useEffect(() => {

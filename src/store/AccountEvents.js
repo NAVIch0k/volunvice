@@ -32,9 +32,9 @@ const AccountEvents = (state = initialState, action) => {
 
 const SetAccountEventsAC=(data)=>({type:SETEVENTS,data})
 
-export const GetAcoountEvents=(arhive=false)=>async(dispatch)=>{
+export const GetAcoountEvents=(arhive=false,direction='up')=>async(dispatch)=>{
     try{
-        let res=await AccountEventsAPI.GetEvents(arhive)
+        let res=await AccountEventsAPI.GetEvents(arhive,direction)
         dispatch(SetAccountEventsAC(res.data))
         // console.log(res);
     }

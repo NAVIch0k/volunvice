@@ -27,7 +27,7 @@ export const TypesAccountApi = {
 }
 
 export const AccountEventsAPI={
-    GetEvents(arhive=false){
-        return instance.get(`/accounts/events?archive=${arhive}`)
+    GetEvents(arhive=false,direction='up'){
+        return instance.get(`/accounts/events?archive=${arhive}&direction=${direction}`)
     }
 }
