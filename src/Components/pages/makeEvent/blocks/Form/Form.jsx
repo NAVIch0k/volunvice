@@ -8,9 +8,13 @@ const Form = () => {
 
   const fileAdd = (e) => {
     const plus = document.querySelector(`.${style.form__iconAdd}`)
+    const text = document.querySelector(`.${style.form__fileText}`)
+
     console.log(e)
     if (e.target.files.length) {
       plus.classList.add(style.form__iconAdd_added)
+      text.classList.add(style.form__fileText_added)
+
       setFile(e.target.value.replace(/^.*[\\\/]/, ''))
     }
   }

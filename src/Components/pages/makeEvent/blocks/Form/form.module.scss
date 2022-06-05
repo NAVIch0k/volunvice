@@ -165,10 +165,19 @@
   }
 
   &__fileText {
-    text-overflow: ellipsis;
+    position: absolute;
     overflow: hidden;
-    width: 160px;
-    height: 1.2em;
-    white-space: nowrap;
+    visibility: hidden;
+    &_added {
+      position: relative;
+      overflow: 1;
+      visibility: visible;
+
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width: 160px;
+      height: 1.2em;
+      white-space: nowrap;
+    }
   }
 }
