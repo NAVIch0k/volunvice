@@ -170,14 +170,23 @@
     visibility: hidden;
     &_added {
       position: relative;
+
+      width: 160px;
+      height: 1.3em;
+      margin-top: 5px;
+
       overflow: 1;
       visibility: visible;
-
       text-overflow: ellipsis;
       overflow: hidden;
-      width: 160px;
-      height: 1.2em;
       white-space: nowrap;
+
+      text-align: center;
+      font-family: 'Raleway';
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      font-feature-settings: 'pnum' on, 'lnum' on;
     }
   }
 }

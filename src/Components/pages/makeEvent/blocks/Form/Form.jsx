@@ -19,8 +19,12 @@ const Form = () => {
     }
   }
 
+  const onSubmit = (e) => {
+    e.preventDefault()
+  }
+
   return (
-    <form className={style.form}>
+    <form className={style.form} onSubmit={onSubmit}>
       <div className={style.form__column}>
         <div className={style.form__field}>
           <label className={style.form__label} htmlFor="event-name">
