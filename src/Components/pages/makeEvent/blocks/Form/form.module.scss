@@ -56,6 +56,9 @@
 
     &_name {
       width: 100%;
+      height: auto;
+
+      white-space: wrap;
     }
 
     &_date {
