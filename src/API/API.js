@@ -33,7 +33,7 @@ export const AccountEventsAPI = {
 }
 
 export const EventsAPI = {
-    GetEvents() {
-        return instance.get(`/events/all?date_from=${new Date(3600 * 24 * 1000)}&date_to=${new Date(3600000 * 24 * 20000)}`)
+    GetEvents(startDate='1990-01-01',finishDate='3000-01-01',types=[]) {
+        return instance.get(`/events/all?date_from=${startDate}&date_to=${finishDate}`+(types.length>0?'&types='+types.join(','):''))
     }
 }

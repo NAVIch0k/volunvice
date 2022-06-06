@@ -29,9 +29,9 @@ const Events = (state = initialState, action) => {
 
 const SetEventsAC=(data)=>({type:SETEVENTS,data})
 
-export const GetEvents=()=>async(dispatch)=>{
+export const GetEvents=(startDate,finishDate,types)=>async(dispatch)=>{
     try{
-        let res=await EventsAPI.GetEvents()
+        let res=await EventsAPI.GetEvents(startDate,finishDate,types)
         dispatch(SetEventsAC(res.data))
     }
     catch(er){

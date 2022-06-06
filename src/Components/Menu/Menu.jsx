@@ -18,9 +18,9 @@ const Menu = () => {
         <NavLink className={style.menu__link} to="/">
           Новости
         </NavLink>
-        <NavLink className={[style.menu__link, style.menu__link_arrow].join(' ')} to="/">
+        {/* <NavLink className={[style.menu__link, style.menu__link_arrow].join(' ')} to="/">
           Выбрать город
-        </NavLink>
+        </NavLink> */}
         <NavLink className={[style.menu__link, style.menu__help].join(' ')} to="/">
           Хочу помочь!
         </NavLink>
