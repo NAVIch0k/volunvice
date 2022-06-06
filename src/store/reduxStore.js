@@ -7,6 +7,7 @@ import typeAccReducer from "./TypeAccount";
 import AppReducer from "./AppInitialized";
 import Levels from './Levels';
 import AccountEvents from './AccountEvents';
+import Events from './Events';
 
 let reducer = combineReducers({
     form: formReducer,
@@ -14,7 +15,8 @@ let reducer = combineReducers({
     typesAccount: typeAccReducer,
     app:AppReducer,
     lvls:Levels,
-    AccountEvents:AccountEvents
+    AccountEvents:AccountEvents,
+    Events:Events
 })
 
 let store = createStore(reducer, composeWithDevTools(applyMiddleware(thunkMiddleware)))

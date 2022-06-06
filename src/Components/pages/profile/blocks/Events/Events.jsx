@@ -13,9 +13,9 @@ const Events = (props) => {
     if (arhive != isArhive) {
       SetIsArhive(arhive)
       if (whoDiraction) {
-        props.GetAccountEvents(arhive,whoDiraction)
+        props.GetEvents(arhive,whoDiraction)
       }else{
-        props.GetAccountEvents(arhive)
+        props.GetEvents(arhive)
       }
     }
   }
@@ -25,9 +25,9 @@ const Events = (props) => {
     if (direction != whoDiraction) {
       SetWhoDiraction(direction)
       if (isArhive) {
-        props.GetAccountEvents(isArhive, direction)
+        props.GetEvents(isArhive, direction)
       } else {
-        props.GetAccountEvents(false, direction)
+        props.GetEvents(false, direction)
       }
     }
   }

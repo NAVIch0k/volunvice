@@ -16,30 +16,32 @@ import style from './profile.module.scss'
 const Profile = () => {
 
   let dispatch = useDispatch()
-  let init=useSelector(state=>state.AccountEvents.total_count)
-  const GetAccountEvents=(arhive=false,direction='up')=>{
-    dispatch(GetAcoountEvents(arhive,direction))
+  let init = useSelector(state => state.AccountEvents.total_count)
+  const GetEvents = (arhive = false, direction = 'up') => {
+    dispatch(GetAcoountEvents(arhive, direction))
   }
 
   useEffect(() => {
-    GetAccountEvents()
+    GetEvents()
   }, [])
-  if (init!=null) {
-    return (
-      <div className={style.page}>
-        <Menu />
+  return (
+    <div className={style.page}>
+      <Menu />
 
-        <div className={style.columns}>
-          <Info />
+      <div className={style.columns}>
+        <Info />
 
-          <div className={style.content}>
-            <Dashboard />
-            <Events GetAccountEvents={GetAccountEvents}/>
-          </div>
+        <div className={style.content}>
+          <Dashboard />
+          {
+            init != null ?
+              <Events GetEvents={GetEvents} />
+              : <></>
+          }
         </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default compose(WithAuthRedirect)(Profile)

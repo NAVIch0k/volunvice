@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 // STYLES
 import style from './menu.module.scss'
@@ -8,24 +9,24 @@ const Menu = () => {
     <section className={style.menu}>
       <h2 className={style.menu__logo}>Volunvice</h2>
       <nav className={style.menu__nav}>
-        <a className={style.menu__link} href="/">
+        <NavLink className={style.menu__link} to="/">
           Главная
-        </a>
-        <a className={style.menu__link} href="/events">
+        </NavLink>
+        <NavLink className={style.menu__link} to="/events">
           Актуальные мероприятия
-        </a>
-        <a className={style.menu__link} href="/">
+        </NavLink>
+        <NavLink className={style.menu__link} to="/">
           Новости
-        </a>
-        <a className={[style.menu__link, style.menu__link_arrow].join(' ')} href="/">
+        </NavLink>
+        <NavLink className={[style.menu__link, style.menu__link_arrow].join(' ')} to="/">
           Выбрать город
-        </a>
-        <a className={[style.menu__link, style.menu__help].join(' ')} href="/">
+        </NavLink>
+        <NavLink className={[style.menu__link, style.menu__help].join(' ')} to="/">
           Хочу помочь!
-        </a>
-        <a className={[style.menu__link, style.menu__link_underline].join(' ')} href="/auth">
+        </NavLink>
+        <NavLink className={[style.menu__link, style.menu__link_underline].join(' ')} to="/auth">
           Войти
-        </a>
+        </NavLink>
       </nav>
     </section>
   )
