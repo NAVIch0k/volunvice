@@ -1,4 +1,4 @@
-import { AuthApi } from "../API/API";
+import { Account, AuthApi } from "../API/API";
 import { stopSubmit } from "redux-form";
 
 const REGISTRATION = 'REGISTRATION USER'
@@ -65,6 +65,24 @@ export const DeleteSend = (id) => async (dispatch) => {
 
 export const AuthMe = () => async (dispatch) => {
     try {
+        dispatch(SetUserDataAC(await AuthApi.CheckMe()))
+    } catch (e) {
+        console.log(e)
+    }
+}
+
+export const ChangeDataUser = (data) => async (dispatch) => {
+    try {
+        await Account.ChangeData(data)
+        dispatch(SetUserDataAC(await AuthApi.CheckMe()))
+    } catch (e) {
+        console.log(e)
+    }
+}
+
+export const ChangeImgUser = (data) => async (dispatch) => {
+    try {
+        await Account.ChangeImg(data)
         dispatch(SetUserDataAC(await AuthApi.CheckMe()))
     } catch (e) {
         console.log(e)

@@ -37,3 +37,14 @@ export const EventsAPI = {
         return instance.get(`/events/all?date_from=${startDate}&date_to=${finishDate}`+(types.length>0?'&types='+types.join(','):''))
     }
 }
+
+export const Account = {
+    ChangeData(data) {
+        return instance.put('/accounts',data)
+    },
+    ChangeImg(img){
+        let formData = new FormData()
+        formData.append('image',img )
+        return instance.put('/accounts/image',formData)
+    }
+}
