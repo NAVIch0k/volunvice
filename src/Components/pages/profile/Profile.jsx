@@ -12,11 +12,13 @@ import Info from './blocks/Info/Info'
 
 // STYLES
 import style from './profile.module.scss'
+import DashboardOrganizer from './blocks/DashboardOrganizer/DashboardOrganizer';
 
 const Profile = () => {
 
   let dispatch = useDispatch()
   let init = useSelector(state => state.AccountEvents.total_count)
+  const TypesUser = useSelector(state => state.user.type_id)
   const GetEvents = (arhive = false, direction = 'up') => {
     dispatch(GetAcoountEvents(arhive, direction))
   }
@@ -32,7 +34,12 @@ const Profile = () => {
         <Info />
 
         <div className={style.content}>
-          <Dashboard />
+          {
+            (TypesUser == 4 || TypesUser == 3) ?
+              <DashboardOrganizer />
+              :
+              <Dashboard />
+          }
           {
             init != null ?
               <Events GetEvents={GetEvents} />

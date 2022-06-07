@@ -7,7 +7,7 @@ export const WithAuthRedirect = (Component) => {
         const history = useHistory()
         const userID = useSelector(state => state.user.account_id)
         if (userID) {
-            if (history.location.pathname === '/auth') {
+            if (history.location.pathname === '/auth'||history.location.pathname.indexOf('/registration')!=-1) {
                 history.replace('/')
             } else {
                 return <Component/>

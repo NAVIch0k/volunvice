@@ -13,7 +13,8 @@ let initialState = {
     date_reg: "",
     photo_name: null,
     involved: null,
-    gratitude: null
+    gratitude: null,
+    description:''
 }
 
 

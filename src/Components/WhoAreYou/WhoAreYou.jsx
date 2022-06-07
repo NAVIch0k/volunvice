@@ -1,8 +1,9 @@
-import React, {useEffect} from "react";
+import React from "react";
 import s from './WhoAreYou.module.scss'
 import WhoAreYouForm from "./WhoAreYouForm";
 import {NavLink, useHistory} from "react-router-dom";
-import {useDispatch} from "react-redux";
+import { compose } from "redux";
+import { WithAuthRedirect } from "../HOC/WithAuthRedirecr";
 
 const WhoAreYou = () => {
 
@@ -30,4 +31,4 @@ const WhoAreYou = () => {
     )
 }
 
-export default WhoAreYou
+export default compose(WithAuthRedirect)(WhoAreYou)

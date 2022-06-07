@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 // STYLES
 import style from './menu.module.scss'
+import avatar from '../../assets/images/avatar.png'
 
 const Menu = () => {
 
@@ -33,7 +34,7 @@ const Menu = () => {
             <NavLink to={'/profile'}>
               <div className={style.menu__user}>
                 <p>{f_name}</p>
-                <img src={`http://188.225.83.101/api/static/accounts/img/${photo_name}`} alt="avatar" />
+                <img src={photo_name ? 'http://188.225.83.101/api/static/accounts/img/' + photo_name : avatar} alt="avatar" />
               </div>
             </NavLink>
             : <NavLink className={[style.menu__link, style.menu__link_underline].join(' ')} to="/auth">
