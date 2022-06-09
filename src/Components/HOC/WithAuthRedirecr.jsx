@@ -13,7 +13,7 @@ export const WithAuthRedirect = (Component) => {
                 return <Component/>
             }
         } else {
-            if (history.location.pathname === '/auth') {
+            if (history.location.pathname === '/auth'||history.location.pathname.indexOf('/registration')!=-1) {
                 return <Component/>
             }
             history.replace('/auth')
